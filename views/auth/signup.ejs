@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up | PurrBite</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="signup-bg">
+      <div class="signup-container">
+        <h2 class="signup-title">Sign Up</h2>
+        <form action="/signup" method="POST" class="signup-form">
+          <%- include('../partials/errors') %>
+          <div class="signup-row">
+            <div class="signup-field">
+              <input type="text" placeholder="First Name" name="firstName" required value="<%= oldInput.firstName ? oldInput.firstName : '' %>" />
+            </div>
+            <div class="signup-field">
+              <input type="text" placeholder="Last Name" name="lastName" required value="<%= oldInput.lastName ? oldInput.lastName : '' %>" />
+            </div>
+          </div>
+          <div class="signup-field">
+            <input type="email" placeholder="Email" name="email" required value="<%= oldInput.email ? oldInput.email : '' %>" />
+          </div>
+          <div class="signup-row">
+            <div class="signup-field">
+              <input type="password" placeholder="Password" name="password" required value="<%= oldInput.password ? oldInput.password : '' %>" />
+            </div>
+            <div class="signup-field">
+              <input type="password" placeholder="Confirm Password" name="confirmPassword" required value="<%= oldInput.confirmPassword ? oldInput.confirmPassword : '' %>" />
+            </div>
+          </div>
+          <div class="signup-terms">
+            <input type="checkbox" name="terms" id="terms" required />
+            <label for="terms">I agree to the <span class="terms-highlight">terms and conditions</span></label>
+          </div>
+          <button class="signup-btn" type="submit">Register</button>
+          <div class="signup-login">
+            Already have an account? <a href="/login">Login</a>
+          </div>
+        </form>
+      </div>
+    </div>
+    <style>
+      body {
+        font-family: 'Montserrat', Arial, sans-serif;
+        background: linear-gradient(120deg, #7f53ac 0%, #657ced 100%);
+        min-height: 100vh;
+        margin: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .signup-bg {
+        width: 100vw;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: linear-gradient(120deg, #7f53ac 0%, #657ced 100%);
+      }
+      .signup-container {
+        background: #fff;
+        border-radius: 22px;
+        box-shadow: 0 4px 32px #7f53ac33;
+        padding: 38px 32px 32px 32px;
+        max-width: 480px;
+        width: 98vw;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      .signup-title {
+        font-size: 2.2rem;
+        font-weight: 600;
+        color: #7f53ac;
+        margin-bottom: 18px;
+        letter-spacing: 1px;
+        text-shadow: 0 2px 8px #7f53ac22;
+      }
+      .signup-form {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 18px;
+      }
+      .signup-row {
+        display: flex;
+        gap: 12px;
+        width: 100%;
+      }
+      .signup-field {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+      }
+      .signup-field input {
+        padding: 12px 14px;
+        border-radius: 12px;
+        border: 2px solid #7f53ac;
+        font-size: 1rem;
+        font-family: inherit;
+        background: #f8f8ff;
+        margin-bottom: 2px;
+        transition: border-color 0.2s, box-shadow 0.2s;
+        box-shadow: 0 2px 8px #7f53ac11;
+      }
+      .signup-field input:focus {
+        border-color: #657ced;
+        outline: none;
+        box-shadow: 0 4px 16px #657ced22;
+      }
+      .signup-terms {
+        display: flex;
+        align-items: center;
+        font-size: 0.98rem;
+        margin-top: 2px;
+        margin-bottom: 2px;
+      }
+      .signup-terms input[type="checkbox"] {
+        accent-color: #7f53ac;
+        margin-right: 8px;
+        width: 18px;
+        height: 18px;
+      }
+      .terms-highlight {
+        color: #7f53ac;
+        font-weight: 600;
+        text-decoration: underline;
+      }
+      .signup-btn {
+        width: 100%;
+        padding: 12px 0;
+        background: linear-gradient(90deg, #7f53ac 0%, #657ced 100%);
+        color: #fff;
+        font-size: 1.15rem;
+        font-weight: 600;
+        border: none;
+        border-radius: 14px;
+        box-shadow: 0 2px 12px #7f53ac22;
+        cursor: pointer;
+        transition: background 0.2s, box-shadow 0.2s;
+      }
+      .signup-btn:hover {
+        background: linear-gradient(90deg, #657ced 0%, #7f53ac 100%);
+        box-shadow: 0 6px 24px #7f53ac44;
+      }
+      .signup-login {
+        margin-top: 10px;
+        text-align: center;
+        font-size: 1rem;
+        color: #7f53ac;
+      }
+      .signup-login a {
+        color: #d32f2f;
+        text-decoration: underline;
+        font-weight: 600;
+        margin-left: 2px;
+      }
+      @media (max-width: 600px) {
+        .signup-container {
+          padding: 18px 6vw 18px 6vw;
+          max-width: 98vw;
+        }
+        .signup-title {
+          font-size: 1.3rem;
+        }
+        .signup-row {
+          flex-direction: column;
+          gap: 8px;
+        }
+        .signup-btn {
+          font-size: 1rem;
+          padding: 10px 0;
+        }
+      }
+    </style>
+
+
+</body>
+</html>
