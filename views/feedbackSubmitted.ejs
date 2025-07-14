@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback</title>
+    <link rel="stylesheet" href="style2.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+
+
+        </nav>
+    </header>
+
+
+
+    <main>
+
+        <div class="container">
+            <p style="font-size: 30px;  display:flex; justify-self:center; color: #ad52c6;">Feedback List</p>
+
+
+            <ul class="feedback-list">
+                <% registeredFeedback.forEach(feed=>{ %>
+                  <li class="feedbackDetails">
+                    <div class="feedback-icon">
+                      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="12" cy="12" r="12" fill="#7f53ac"/>
+                        <path d="M8.5 12.5L11 15L16 10" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+                      </svg>
+                    </div>
+                    <div class="feedback">
+                      <span class="feedback-text">
+                        <%= feed.descrp %>
+                      </span>
+                    </div>
+                  </li>
+                <% }) %>
+            </ul>
+</style>
+<style>
+  .feedback-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 30px 0;
+  }
+  .feedbackDetails {
+    margin-bottom: 18px;
+    background: linear-gradient(90deg, #e0c3fc 0%, #8ec5fc 100%);
+    border-radius: 14px;
+    box-shadow: 0 2px 8px rgba(127, 83, 172, 0.08);
+    padding: 18px 22px 18px 60px;
+    transition: box-shadow 0.2s, transform 0.2s;
+    position: relative;
+    display: flex;
+    align-items: center;
+    min-height: 56px;
+  }
+  .feedbackDetails:hover {
+    box-shadow: 0 6px 18px rgba(127, 83, 172, 0.18);
+    transform: translateY(-2px) scale(1.02);
+  }
+  .feedback-icon {
+    position: absolute;
+    left: 18px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .feedback {
+    font-size: 1.13rem;
+    color: #4b3869;
+    text-align: left;
+    word-break: break-word;
+    flex: 1;
+    position: relative;
+    left: -3px;
+    padding: 8px 18px 8px 0;
+    background: rgba(255,255,255,0.55);
+    border-radius: 10px;
+    box-shadow: 0 1px 4px rgba(127, 83, 172, 0.07);
+    transition: background 0.2s;
+    min-height: 32px;
+    display: flex;
+    align-items: center;
+}
+.feedback-text {
+    display: inline-block;
+    font-family: 'Segoe UI', 'Arial', sans-serif;
+    font-size: 1.13rem;
+    font-weight: 500;
+    color: #5a3e7a;
+    letter-spacing: 0.2px;
+    line-height: 1.5;
+    padding-left: 2px;
+    padding-right: 2px;
+    text-shadow: 0 1px 0 #fff, 0 1px 8px #e0c3fc44;
+    word-break: break-word;
+    position: relative;
+    left: 11px;
+}
+  
+</style>
+
+
+            <div class="homeBack">
+                <a href="/" class="pretty-home-btn">Home</a>
+            </div>
+</style>
+<style>
+  .pretty-home-btn {
+    display: inline-block;
+    background: linear-gradient(90deg, #7f53ac 0%, #657ced 100%);
+    color: #fff;
+    border: none;
+    border-radius: 22px;
+    padding: 12px 38px;
+    font-size: 1.15rem;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 4px 16px rgba(127, 83, 172, 0.13);
+    transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+    margin-top: 18px;
+    text-decoration: none;
+    letter-spacing: 1px;
+  }
+  .pretty-home-btn:hover {
+    background: linear-gradient(90deg, #657ced 0%, #7f53ac 100%);
+    transform: translateY(-2px) scale(1.04);
+    box-shadow: 0 8px 24px rgba(127, 83, 172, 0.22);
+    color: #fff;
+    text-decoration: none;
+  }
+</style>
+
+        </div>
+
+    </main>
+
+    
+
+
+
+
+    <footer>
+
+    </footer>
+
+</body>
+
+</html>
