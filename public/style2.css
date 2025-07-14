@@ -1,0 +1,68 @@
+html,
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background-image: url('FedBack.webp');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    font-family: Arial, sans-serif;
+    position: relative;
+}
+
+
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+
+    width: 50%;
+    height: 50%;
+    margin-top: 5vh;
+    box-shadow: 4px 6px 18px #aa10da;
+    background-color: whitesmoke;
+    border-radius: 10px;
+    margin-bottom: 5vh;
+}
+
+
+li {
+    list-style: none;
+}
+
+
+.feedbackDetails {
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+    margin-bottom: 40px;
+    gap: 20vh;
+
+}
+
+
+.feedback {
+    box-shadow: 4px 3px 5px #cfcfcf;
+    border-radius: 5px;
+    background-color: #ffffff;
+    color: grey;
+    font-size: 26px;
+    position: relative;
+    left: -2vh;
+
+}
+
+
+.homeBack {
+    display: inline;
+    display: flex;
+    justify-content: center;
+    margin-top: 5vh;
+    margin-bottom: 2vh;
+    font-size: 24px;
+}
